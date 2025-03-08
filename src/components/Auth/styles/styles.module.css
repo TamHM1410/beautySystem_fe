@@ -1,0 +1,23 @@
+.wrapper {
+    min-height: 900px;
+    background-size: cover;
+    background-image: url(https://media.istockphoto.com/id/1496614896/vi/anh/ng%C6%B0%E1%BB%9Di-ph%E1%BB%A5-n%E1%BB%AF-tr%E1%BA%BB-ch%E1%BB%A7ng-t%E1%BB%99c-h%E1%BB%97n-h%E1%BB%A3p-m%E1%BB%89m-c%C6%B0%E1%BB%9Di-thoa-kem-d%C6%B0%E1%BB%A1ng-%E1%BA%A9m-l%C3%AAn-m%E1%BA%B7t-trong-ph%C3%B2ng-t%E1%BA%AFm.jpg?s=2048x2048&w=is&k=20&c=4ZkCkM5g8tjti7tq_Qx5Kt3wI_R5jruheqfp2PsLuVQ=);
+  }
+  
+  .form {
+    border-right: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-7));
+    min-height: 900px;
+    max-width: 450px;
+    padding-top: 80px;
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      max-width: 100%;
+    }
+  }
+  
+  .title {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+  }
