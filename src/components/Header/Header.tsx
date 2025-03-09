@@ -97,7 +97,7 @@ export function HeaderMegaMenu() {
               Home
             </Link>
 
-            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <Link to="/features" className={classes.link}>
                   <Center inline>
@@ -137,8 +137,12 @@ export function HeaderMegaMenu() {
                   </Group>
                 </div>
               </HoverCard.Dropdown>
-            </HoverCard>
+            </HoverCard> */}
+
             <Link to="/learn" className={classes.link}>
+             Blogs
+            </Link>
+            <Link to="/skintest" className={classes.link}>
               Test your skin
             </Link>
             <Link to="/schedule" className={classes.link}>
