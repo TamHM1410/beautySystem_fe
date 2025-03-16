@@ -7,8 +7,10 @@ import {
   IconFingerprint,
   IconNotification,
 } from '@tabler/icons-react';
+import { Link } from 'react-router-dom';
 import {
   Anchor,
+  Avatar,
   Box,
   Burger,
   Button,
@@ -27,7 +29,7 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
-import { Link } from 'react-router-dom';
+import { useAuth } from '@/context/AuthContext';
 import classes from './styles/styles.module.css';
 
 const mockdata = [
@@ -64,6 +66,7 @@ const mockdata = [
 ];
 
 export function HeaderMegaMenu() {
+  const { user, logout } = useAuth();
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
@@ -97,7 +100,7 @@ export function HeaderMegaMenu() {
               Home
             </Link>
 
-            {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+            <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
                 <Link to="/features" className={classes.link}>
                   <Center inline>
@@ -137,12 +140,8 @@ export function HeaderMegaMenu() {
                   </Group>
                 </div>
               </HoverCard.Dropdown>
-            </HoverCard> */}
-
+            </HoverCard>
             <Link to="/learn" className={classes.link}>
-             Blogs
-            </Link>
-            <Link to="/skintest" className={classes.link}>
               Test your skin
             </Link>
             <Link to="/schedule" className={classes.link}>
@@ -151,9 +150,36 @@ export function HeaderMegaMenu() {
           </Group>
 
           <Group visibleFrom="sm">
-            <Link to="/auth" className={classes.link}>
-              Log in
-            </Link>
+            {user ? (
+              <HoverCard position="bottom" radius="md" shadow="md" withinPortal>
+                <HoverCard.Target>
+                  <Avatar />
+                </HoverCard.Target>
+
+                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                  <Group align="flex-start" px="md">
+                    <Text fw={500}>{user.username}</Text>
+                  </Group>
+                  <Divider my="sm" />{' '}
+                  <Link to="/dashboard" className={classes.link}>
+                    Dashboard
+                  </Link>
+                  <Button
+                    variant="transparent"
+                    fullWidth
+                    p="xs"
+                    className={classes.link}
+                    onClick={logout}
+                  >
+                    Log out
+                  </Button>
+                </HoverCard.Dropdown>
+              </HoverCard>
+            ) : (
+              <Link to="/auth/login" className={classes.link}>
+                Log in
+              </Link>
+            )}
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -194,8 +220,40 @@ export function HeaderMegaMenu() {
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            {user ? (
+              <HoverCard position="bottom" radius="md" shadow="md" withinPortal>
+                <HoverCard.Target>
+                  <Avatar />
+                </HoverCard.Target>
+
+                <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
+                  <Group align="flex-start" px="md">
+                    <Text fw={500}>{user.username}</Text>
+                  </Group>
+                  <Divider my="sm" />
+                  <Link to="/dashboard" className={classes.link}>
+                    Dashboard
+                  </Link>
+
+                  <Button
+                    variant="transparent"
+                    fullWidth
+                    p="xs"
+                    className={classes.link}
+                    onClick={logout}
+                  >
+                    Log out
+                    <Link to="/dashboard" className={classes.link}>
+                      Dashboard
+                    </Link>
+                  </Button>
+                </HoverCard.Dropdown>
+              </HoverCard>
+            ) : (
+              <Link to="/auth/login" className={classes.link}>
+                Log in
+              </Link>
+            )}
           </Group>
         </ScrollArea>
       </Drawer>

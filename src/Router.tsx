@@ -1,12 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AppLayout from './components/Layout/AppLayout';
+import AuthLayout from './components/Layout/AuthLayout';
 import DashboardLayout from './components/Layout/DashboardLayout';
-import MainNavBar from './components/Navbar/MainNavbar';
-import { NotFoundPage } from './components/Notfound/Notfound';
-import AuthPage from './pages/Auth.page';
+import Profile from './components/Profile/Profile';
+import WorkSchedule from './components/WorkSchedule/WorkSchedule';
 import { HomePage } from './pages/Home.page';
-import AccountSetting from './components/Account/Account';
-import SkinTest from './components/Skintest/Skintest';
+import LoginPage from './pages/Login.page';
+import { NotFoundPage } from './pages/Notfound.page';
+import RegisterPage from './pages/Register.page';
+import SchedulePage from './pages/Schedule.page';
+import SuccessPage from './pages/Success.page';
 
 const router = createBrowserRouter([
   {
@@ -15,21 +18,37 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> }, // Trang chủ
       { path: '*', element: <NotFoundPage /> }, // Trang 404
-      { path: '/skintest', element: <SkinTest /> }, // Trang 404
-
+      { path: '/success', element: <SuccessPage /> }, // Trang thành công
+      // {
+      //   path: 'profile',
+      //   element: <Profile />, // Trang đăng ký
+      // },
     ],
   },
   {
     path: '/auth',
-    element: <AuthPage />,
+    element: <AuthLayout />, // AuthLayout là route cha
+    children: [
+      {
+        path: 'login',
+        element: <LoginPage />, // Trang đăng nhập
+      },
+      {
+        path: 'register',
+        element: <RegisterPage />, // Trang đăng ký
+      },
+    ],
   },
   {
     path: '/dashboard',
-    element: <DashboardLayout />,
+    element: <DashboardLayout />, // AuthLayout là route cha
     children: [
-      { path: 'notfound', element: <NotFoundPage /> },
-      { path: 'account', element: <AccountSetting /> },
-
+      {
+        path: 'account',
+        element: <Profile />, // Trang đăng nhập
+      },
+      { index: true, element: <SchedulePage /> }, // Trang thành công
+      { path: 'schedule', element: <WorkSchedule /> }, // Trang thành công
     ],
   },
 ]);

@@ -1,15 +1,17 @@
 import '@mantine/core/styles.css';
+import '@mantine/dates/styles.css';
 
-import { BrowserRouter } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
-import { HeaderMegaMenu } from './components/Header/Header';
+import { theme } from './config/theme';
+import { AuthProvider } from './context/AuthContext';
 import { Router } from './Router';
-import { theme } from './theme';
 
 export default function App() {
   return (
     <MantineProvider theme={theme}>
-      <Router />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </MantineProvider>
   );
 }

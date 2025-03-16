@@ -28,8 +28,6 @@ export default function AuthenticationImage() {
   const handleSubmit = (values: typeof form.values) => {
     console.log(values, 'payload');
   };
-  console.log(type.value,'type')
-
 
   return (
     <div className={classes.wrapper}>

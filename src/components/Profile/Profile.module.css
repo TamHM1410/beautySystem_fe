@@ -1,0 +1,46 @@
+.profileCard {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profileHeader {
+  background-color: #00bfa6;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.profileAvatar {
+  border: 5px solid white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profileDetails {
+  padding: 60px 20px 20px; /* Adjust padding to accommodate the avatar */
+  text-align: center;
+}
+
+.profileStats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.profileStat {
+  text-align: center;
+}
+
+.profileStatValue {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.profileStatLabel {
+  color: #888;
+}

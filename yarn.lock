@@ -1199,6 +1199,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mantine/carousel@npm:^7.17.2":
+  version: 7.17.2
+  resolution: "@mantine/carousel@npm:7.17.2"
+  peerDependencies:
+    "@mantine/core": 7.17.2
+    "@mantine/hooks": 7.17.2
+    embla-carousel-react: ">=7.0.0"
+    react: ^18.x || ^19.x
+    react-dom: ^18.x || ^19.x
+  checksum: 10c0/92ac7b70bd057c1ccc8a120db418d6c415cb6742f20dd8a52adbf208c80d14089c09f69ca3885727acfd1ac81fafb5fe726df03e1e8abed7e8d64c782fe2cc91
+  languageName: node
+  linkType: hard
+
 "@mantine/core@npm:7.17.1":
   version: 7.17.1
   resolution: "@mantine/core@npm:7.17.1"
@@ -3147,6 +3160,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dayjs@npm:^1.11.13":
+  version: 1.11.13
+  resolution: "dayjs@npm:1.11.13"
+  checksum: 10c0/a3caf6ac8363c7dade9d1ee797848ddcf25c1ace68d9fe8678ecf8ba0675825430de5d793672ec87b24a69bf04a1544b176547b2539982275d5542a7955f35b7
+  languageName: node
+  linkType: hard
+
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -3323,6 +3343,34 @@ __metadata:
   version: 1.5.38
   resolution: "electron-to-chromium@npm:1.5.38"
   checksum: 10c0/f44715632fce33ac2444e5f0ac54684640b95bbfcdde47153e727645c33f5d18110d5af5348120a8345707c6c219d6109573b6acba56d819ca607010b75931ef
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^8.5.2":
+  version: 8.5.2
+  resolution: "embla-carousel-react@npm:8.5.2"
+  dependencies:
+    embla-carousel: "npm:8.5.2"
+    embla-carousel-reactive-utils: "npm:8.5.2"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10c0/8e55a2bc562aed2c55d9debf2523dbd4f2524b0ecea62cf51f8f096ed993af608890084b5f35e1694a8aada087602a12cc4b8a68aeee12b4a33cc8361636c63d
+  languageName: node
+  linkType: hard
+
+"embla-carousel-reactive-utils@npm:8.5.2":
+  version: 8.5.2
+  resolution: "embla-carousel-reactive-utils@npm:8.5.2"
+  peerDependencies:
+    embla-carousel: 8.5.2
+  checksum: 10c0/aa4870539d9090f9ac02338c3ca3e1710a6f0e6890cd2f6fbf6afcc1eeac48192406f92bf042fe9429cc61709338124baf1514c75227a7a16b19b83e9f376274
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:8.5.2":
+  version: 8.5.2
+  resolution: "embla-carousel@npm:8.5.2"
+  checksum: 10c0/4bbb04c08616d560a7b47b1897794a077baa5aa27642420b35b3be58ab7b0dc000ef073b6e47d0029b0791c046e0cd39d295704faecb1957d2c315df51be58e6
   languageName: node
   linkType: hard
 
@@ -5876,6 +5924,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^9.18.0"
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.4.1"
+    "@mantine/carousel": "npm:^7.17.2"
     "@mantine/core": "npm:7.17.1"
     "@mantine/dates": "npm:^7.17.1"
     "@mantine/form": "npm:^7.17.1"
@@ -5898,6 +5947,8 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.3.4"
     add: "npm:^2.0.6"
     axios: "npm:^1.8.2"
+    dayjs: "npm:^1.11.13"
+    embla-carousel-react: "npm:^8.5.2"
     eslint: "npm:^9.18.0"
     eslint-config-mantine: "npm:^4.0.3"
     eslint-plugin-jsx-a11y: "npm:^6.10.2"

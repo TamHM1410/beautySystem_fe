@@ -3,7 +3,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ReactDOM from 'react-dom/client';
 import { Toaster } from 'react-hot-toast';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Loader } from '@mantine/core';
 import App from './App';
 
@@ -23,11 +22,9 @@ const queryClientProvider = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClientProvider}>
     <Suspense fallback={<Loader color="blue" />}>
-      
-        <App />
-    
+      <App />
     </Suspense>
-    <ReactQueryDevtools buttonPosition={'bottom-left'} initialIsOpen={false} />
+    <ReactQueryDevtools buttonPosition="bottom-left" initialIsOpen={false} />
     <Toaster position="top-center" reverseOrder={false} />
   </QueryClientProvider>
 );

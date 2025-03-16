@@ -1,7 +1,9 @@
-import { Button ,ButtonProps} from '@mantine/core';
+import { Button, ButtonProps } from '@mantine/core';
 
-const StyledButton = ({ className, ...props }:ButtonProps) => {
-  return <Button className={`${className}`} {...props}/>;
+type StyledButtonProps = Omit<React.ComponentPropsWithoutRef<'button'>, 'color'> & ButtonProps;
+
+const StyledButton = ({ className, type, ...props }: StyledButtonProps) => {
+  return <Button className={`${className}`} type={type} {...props} />;
 };
 
 export default StyledButton;
